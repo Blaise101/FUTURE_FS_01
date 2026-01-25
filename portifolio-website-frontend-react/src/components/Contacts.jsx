@@ -1,4 +1,22 @@
 export default function Contacts() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const payload = Object.fromEntries(formData);
+
+    const res = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+    alert(data.message);
+  };
+
   return (
     <section
       className="py-24"
@@ -12,19 +30,15 @@ export default function Contacts() {
         </p>
         <form
           className="space-y-6 text-left"
-          action="#"
+          onSubmit={handleSubmit}
         >
           <div className="flex flex-row w-full gap-6">
             <div className="w-1/2">
-              <label
-                className="mb-2 block text-sm font-medium text-gray-300"
-                for="name"
-              >
+              <label className="mb-2 block text-sm font-medium text-gray-300">
                 Name
               </label>
               <input
                 className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow focus:outline-none focus:ring-2 focus:ring-lime-500"
-                id="name"
                 name="name"
                 required
                 placeholder="Full Name..."
@@ -32,15 +46,11 @@ export default function Contacts() {
               />
             </div>
             <div className="w-1/2">
-              <label
-                className="mb-2 block text-sm font-medium text-gray-300"
-                for="email"
-              >
+              <label className="mb-2 block text-sm font-medium text-gray-300">
                 Email
               </label>
               <input
                 className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow focus:outline-none focus:ring-2 focus:ring-lime-500"
-                id="email"
                 name="email"
                 required
                 placeholder="Email..."
@@ -49,30 +59,22 @@ export default function Contacts() {
             </div>
           </div>
           <div>
-            <label
-              className="mb-2 block text-sm font-medium text-gray-300"
-              for="subject"
-            >
+            <label className="mb-2 block text-sm font-medium text-gray-300">
               Subject
             </label>
             <input
               className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow focus:outline-none focus:ring-2 focus:ring-lime-500"
-              id="subject"
               placeholder="Subject..."
               name="subject"
               type="text"
             />
           </div>
           <div>
-            <label
-              className="mb-2 block text-sm font-medium text-gray-300"
-              for="message"
-            >
+            <label className="mb-2 block text-sm font-medium text-gray-300">
               Message
             </label>
             <textarea
               className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow focus:outline-none focus:ring-2 focus:ring-lime-500"
-              id="message"
               name="message"
               placeholder="Message..."
               required
