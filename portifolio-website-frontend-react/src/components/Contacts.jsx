@@ -12,7 +12,7 @@ export default function Contacts() {
         </p>
         <form
           className="space-y-6 text-left"
-          action="https://blaisejourneyto3500.page.gd/public/send-email"
+          action="#"
         >
           <div className="flex flex-row w-full gap-6">
             <div className="w-1/2">
