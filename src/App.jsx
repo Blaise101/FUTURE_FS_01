@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
 
 function App() {
   useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Intro />
+          <About />
         </main>
       </div>
     </>
