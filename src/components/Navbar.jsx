@@ -5,8 +5,31 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 export default function Navbar() {
+  useEffect(() => {
+    const header = document.getElementById("header");
+    const scrolledClasses = [
+      "bg-[#1C1C1C]/80",
+      "backdrop-blur-sm",
+      "shadow-lg",
+      "shadow-lime-500/5",
+    ];
+
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        header.classList.add(...scrolledClasses);
+      } else {
+        header.classList.remove(...scrolledClasses);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header
       className="sticky top-0 z-50 bg-transparent transition-all duration-300"
