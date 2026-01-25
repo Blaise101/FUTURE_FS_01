@@ -3,6 +3,7 @@ import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Languages from "./components/Languages";
+import Projects from "./components/Projects";
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
           <Intro />
           <About />
           <Languages />
+          <Projects />
         </main>
       </div>
     </>
