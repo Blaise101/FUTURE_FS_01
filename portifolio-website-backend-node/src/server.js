@@ -1,18 +1,19 @@
-import dotenv from 'dotenv';
-import app from './app.js';
-import transporter from './config/mailer.js';
+import dotenv from "dotenv";
+dotenv.config(); // MUST be first line
 
-dotenv.config();
+import app from "./app.js";
+import transporter from "./config/mailer.js";
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  transporter.verify((error, success) => {
-    if (error) {
-      console.log("❌ Mail error:", error);
+  console.log(`Server is running on port ${PORT}`);
+
+  transporter.verify((err, success) => {
+    if (err) {
+      console.error("❌ SMTP ERROR:", err);
     } else {
-      console.log("✅ Mail server ready");
+      console.log("✅ SMTP READY (Gmail app password working)");
     }
   });
-  console.log(`Server is running on port ${PORT}`);
 });

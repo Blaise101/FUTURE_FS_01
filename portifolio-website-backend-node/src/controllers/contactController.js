@@ -15,8 +15,9 @@ export const submitContact = async (req, res) => {
     // console.log({ name, email, subject, message });
 
     await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_RECEIVER,
+      // from: `"Portfolio Contact" <${process.env.EMAIL_FROM}>`,
+      from: `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`,
+      to: process.env.EMAIL_FROM,
       subject: subject || "New Portfolio Message",
       html: `
         <h3>New Contact Message</h3>
@@ -27,7 +28,7 @@ export const submitContact = async (req, res) => {
       `,
     })
 
-    // Optional: auto-reply to sender
+    // Auto-reply to sender
     await transporter.sendMail({
       from: `"Blaise Izerimana" <${process.env.EMAIL_USER}>`,
       to: email,
