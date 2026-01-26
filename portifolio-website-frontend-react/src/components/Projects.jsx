@@ -45,16 +45,16 @@ export default function Projects() {
         <button
           aria-label="Previous project"
           onClick={() => goToSlide(currentIndex - 1)}
-          className="lime-glow-hover absolute left-0 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-lime-500/80 text-gray-900 transition-all duration-300 hover:bg-lime-500"
+          className="lime-glow-hover absolute left-0 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-lime-500/80 text-gray-900 transition-all duration-300 hover:bg-lime-500 font-extrabold"
         >
-          &lt;
+          &lsaquo;
         </button>
         <button
           onClick={() => goToSlide(currentIndex + 1)}
           aria-label="Next project"
-          className="lime-glow-hover absolute right-0 top-1/2 flex h-12 w-12 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-lime-500/80 text-gray-900 transition-all duration-300 hover:bg-lime-500"
+          className="lime-glow-hover absolute right-0 top-1/2 flex h-12 w-12 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-lime-500/80 text-gray-900 transition-all duration-300 hover:bg-lime-500 font-extrabold"
         >
-          &gt;
+          &rsaquo;
         </button>
         <div
           className="absolute -bottom-10 left-1/2 flex -translate-x-1/2 gap-2"

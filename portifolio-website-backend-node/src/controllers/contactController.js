@@ -11,11 +11,8 @@ export const submitContact = async (req, res) => {
   }
 
   try {
-    // console.log("New Contact Message:");
-    // console.log({ name, email, subject, message });
 
     await transporter.sendMail({
-      // from: `"Portfolio Contact" <${process.env.EMAIL_FROM}>`,
       from: `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`,
       to: process.env.EMAIL_FROM,
       subject: subject || "New Portfolio Message",
