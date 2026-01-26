@@ -1,4 +1,4 @@
-# 📬 Contact Form – React + Node.js + Nodemailer
+# Portfolio Website – React + Node.js
 
 A full-stack contact form built with **React (frontend)** and **Node.js + Express (backend)**.  
 Messages submitted from the frontend are sent directly to email using **Gmail SMTP (App Password)**.
