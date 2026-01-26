@@ -1,3 +1,5 @@
+import transporter from "../config/mailer.js";
+
 export const submitContact = async (req, res) => {
   const { name, email, subject, message } = req.body;
 
@@ -9,18 +11,44 @@ export const submitContact = async (req, res) => {
   }
 
   try {
-    console.log("New Contact Message:");
-    console.log({ name, email, subject, message });
+    // console.log("New Contact Message:");
+    // console.log({ name, email, subject, message });
+
+    await transporter.sendMail({
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_RECEIVER,
+      subject: subject || "New Portfolio Message",
+      html: `
+        <h3>New Contact Message</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    })
+
+    // Optional: auto-reply to sender
+    await transporter.sendMail({
+      from: `"Blaise Izerimana" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: "Thanks for reaching out!",
+      html: `
+        <p>Hi ${name},</p>
+        <p>Thanks for contacting me. I’ve received your message and will get back to you soon.</p>
+        <br />
+        <p>— Blaise</p>
+      `,
+    });
 
     return res.status(200).json({
       success: true,
       message: "Message received successfully."
     })
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return res.status(500).json({
       success: false,
-      message: "Server error. Please try again later."
+      message: error
     })
   }
 }
