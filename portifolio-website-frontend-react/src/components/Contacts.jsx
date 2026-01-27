@@ -17,13 +17,16 @@ export default function Contacts() {
     const formData = new FormData(e.target);
     const payload = Object.fromEntries(formData);
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://future-fs-01-ebrq.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
         },
-        body: JSON.stringify(payload),
-      });
+      );
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Failed to send");

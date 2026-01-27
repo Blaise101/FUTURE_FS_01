@@ -5,7 +5,7 @@ import contactRoutes from "./routes/contactRoute.js"
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173", // Vite default port
+  origin: "https://future-fs-01-ebrq.onrender.com/", // Vite default port
 }))
 
 app.use(express.json());
