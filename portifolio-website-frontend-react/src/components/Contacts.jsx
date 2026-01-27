@@ -19,6 +19,7 @@ export default function Contacts() {
     try {
       const res = await fetch(
         "https://future-fs-01-ebrq.onrender.com/api/contact",
+        // const res = await fetch("http://localhost:5000/api/contact", {
         {
           method: "POST",
           headers: {
