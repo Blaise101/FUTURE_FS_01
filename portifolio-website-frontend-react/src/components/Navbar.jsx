@@ -83,7 +83,7 @@ export default function Navbar() {
           <a
             rel="noopener noreferrer"
             className="text-gray-300 transition-all duration-300 hover:scale-110 hover:text-lime-400"
-            href="https://github.com/Blaise202"
+            href="https://github.com/Blaise101"
             target="_blank"
           >
             <FontAwesomeIcon

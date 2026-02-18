@@ -10,6 +10,6 @@ export const ProjectImages = [
   { src: iremeSupermarket, alt: "Ireme Supermarket" },
   { src: ucepLanding, alt: "UCEP Landing Page" },
   { src: byuzuyeImage, alt: "Byuzuye Website" },
-  { src: reactPosCart, alt: "React POS System" },
   { src: lunaThread, alt: "Luna Thread Dashboard" },
+  { src: reactPosCart, alt: "React POS System" },
 ];
