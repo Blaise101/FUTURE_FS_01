@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config(); // MUST be first line
+dotenv.config();
 
 import app from "./app.js";
 import transporter from "./config/mailer.js";

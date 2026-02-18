@@ -5,9 +5,9 @@ import contactRoutes from "./routes/contactRoute.js"
 const app = express();
 
 app.use(cors({
-  origin: "https://blaise101portfolio.vercel.app",
+  // origin: "https://blaise101portfolio.vercel.app",
   methods: ["GET", "POST"],
-  // origin: "http://localhost:5173",
+  origin: "http://localhost:5173",
 }));
 
 app.use(express.json());

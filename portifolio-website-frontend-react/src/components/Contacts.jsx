@@ -18,8 +18,8 @@ export default function Contacts() {
     const payload = Object.fromEntries(formData);
     try {
       const res = await fetch(
-        "https://future-fs-01-ebrq.onrender.com/api/contact",
-        // const res = await fetch("http://localhost:5000/api/contact", {
+        // "https://future-fs-01-ebrq.onrender.com/api/contact",
+        "http://localhost:5000/api/contact",
         {
           method: "POST",
           headers: {
@@ -68,6 +68,7 @@ export default function Contacts() {
               <input
                 className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow form-item focus:outline-none focus:ring-2 focus:ring-lime-500"
                 name="name"
+                value="Blaise"
                 required
                 placeholder="Full Name..."
                 type="text"
@@ -80,6 +81,7 @@ export default function Contacts() {
               <input
                 className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow form-item focus:outline-none focus:ring-2 focus:ring-lime-500"
                 name="email"
+                value="blaise@example.com"
                 required
                 placeholder="Email..."
                 type="email"
@@ -94,6 +96,7 @@ export default function Contacts() {
               className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow form-item focus:outline-none focus:ring-2 focus:ring-lime-500"
               placeholder="Subject..."
               name="subject"
+              value="Hello!"
               type="text"
             />
           </div>
@@ -105,6 +108,7 @@ export default function Contacts() {
               className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white transition-shadow form-item focus:outline-none focus:ring-2 focus:ring-lime-500"
               name="message"
               placeholder="Message..."
+              value="I just wanted to say hi and that I love your portfolio!"
               required
               rows="5"
             ></textarea>
