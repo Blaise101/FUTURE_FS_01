@@ -7,6 +7,7 @@ const app = express();
 app.use(cors({
   origin: "https://blaise101portfolio.vercel.app",
   methods: ["GET", "POST"],
+  credentials: true
   // origin: "http://localhost:5173",
 }));
 
