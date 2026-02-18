@@ -18,8 +18,8 @@ export default function Contacts() {
     const payload = Object.fromEntries(formData);
     try {
       const res = await fetch(
-        // "https://future-fs-01-ebrq.onrender.com/api/contact",
-        "http://localhost:5000/api/contact",
+        "https://future-fs-01-ebrq.onrender.com/api/contact",
+        // "http://localhost:5000/api/contact",
         {
           method: "POST",
           headers: {
