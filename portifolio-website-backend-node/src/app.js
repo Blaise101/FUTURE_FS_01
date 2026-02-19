@@ -26,9 +26,6 @@ app.use(cors({
   credentials: true
 }));
 
-// ✅ Important for preflight
-app.options("*", cors());
-
 app.use(express.json());
 
 // ✅ Routes
