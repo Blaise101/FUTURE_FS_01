@@ -16,10 +16,10 @@ export default function Contacts() {
 
     const formData = new FormData(e.target);
     const payload = Object.fromEntries(formData);
+
     try {
       const res = await fetch(
         "https://future-fs-01-ebrq.onrender.com/api/contact",
-        // "http://localhost:5000/api/contact",
         {
           method: "POST",
           headers: {
@@ -30,13 +30,17 @@ export default function Contacts() {
       );
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Failed to send");
+
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to send");
+      }
+
+      showToast("Message sent successfully ✅", "success");
+      e.target.reset();
     } catch (err) {
+      console.error(err);
       showToast(err.message || "Something went wrong ❌", "error");
     } finally {
-      document.querySelectorAll(".form-item").forEach((formItem) => {
-        formItem.value = "";
-      });
       setLoading(false);
     }
   };
@@ -50,12 +54,15 @@ export default function Contacts() {
         message={toast.message}
         type={toast.type}
       />
+
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-5xl">Get In Touch</h2>
+
         <p className="mb-10 text-lg text-gray-400">
           Get in touch with me for more information about me or leave any
           testimonial you need to give about me.
         </p>
+
         <form
           className="space-y-6 text-left"
           onSubmit={handleSubmit}

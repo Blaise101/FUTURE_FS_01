@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 export default function About() {
+  const navigate = useNavigate();
   return (
     <section
       className="py-24"
@@ -39,12 +41,12 @@ export default function About() {
         </p>
       </div>
       <div className="mt-12 flex justify-center gap-6">
-        <a
+        <button
           className="lime-glow lime-glow-hover inline-block transform rounded-lg bg-lime-500 px-8 py-3 text-lg font-bold text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-lime-400"
-          href="#cv"
+          onClick={() => navigate("/cv")}
         >
           Download CV &rsaquo;
-        </a>
+        </button>
         <a
           className="inline-block transform rounded-lg bg-gray-700 px-8 py-3 text-lg font-bold text-white transition-all duration-300 hover:scale-105 hover:bg-gray-600"
           href="mailto:izerimanab74@gmail.com"

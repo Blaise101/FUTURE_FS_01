@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import MyImage from "/images/blaise.jpg";
 
 export default function Intro() {
+  const navigate = useNavigate();
   return (
     <section
       className="flex min-h-screen items-center justify-center pt-n20 py-n20"
@@ -23,12 +25,12 @@ export default function Intro() {
               web solutions and always striving to turn complex problems into
               simple, elegant code.
             </p>
-            <a
+            <button
               className="lime-glow lime-glow-hover inline-block transform rounded-lg bg-lime-500 px-8 py-3 text-lg font-bold text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-lime-400"
-              href="#"
+              onClick={() => navigate("/cv")}
             >
               My Resume &rsaquo;
-            </a>
+            </button>
           </div>
         </div>
         <div className="relative mt-10 md:mt-0">
