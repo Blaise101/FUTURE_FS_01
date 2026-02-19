@@ -6,7 +6,7 @@ import Languages from "./components/Languages";
 import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import CV from "./assets/Blaise_Izerimana_Cover_letter.pdf";
+import CV from "./assets/Blaise_Izerimana_Cover_Letter.pdf";
 
 function App() {
   useEffect(() => {
