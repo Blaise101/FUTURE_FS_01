@@ -6,8 +6,8 @@ const app = express();
 
 // ✅ Allowed origins
 const allowedOrigins = [
-  "http://localhost:5173",
-  // "https://blaise101portfolio.vercel.app"
+  // "http://localhost:5173",
+  "https://blaise101portfolio.vercel.app"
 ];
 
 // ✅ Proper CORS config (dynamic)
