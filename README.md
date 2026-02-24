@@ -19,12 +19,14 @@ Messages submitted from the frontend are sent directly to email using **Gmail SM
 ## 🧱 Tech Stack
 
 ### Frontend
+
 - React
 - Tailwind CSS
 - Fetch API
 - react-hot-toast
 
 ### Backend
+
 - Node.js
 - Express
 - Nodemailer
@@ -72,6 +74,8 @@ FUTURE_FS_01/
 │ │ │ └── mailer.js
 │ │ ├── controllers/
 │ │ │ └── contactController.js
+│ │ ├── middlewares/
+│ │ │ └── rateLimiter.js
 │ │ ├── routes/
 │ │ │ └── contactRoute.js
 │ │ ├── app.js
@@ -85,15 +89,11 @@ FUTURE_FS_01/
 └── README.md
 ```
 
-
 ---
-
 
 ## ⚙️ Environment Variables
 
-
 Create a `.env` file inside the **backend** folder:
-
 
 ```env
 PORT=5000
@@ -110,9 +110,11 @@ EMAIL_FROM_NAME=Your App Name
 ```
 
 ## ⚠️ IMPORTANT:
+
 Use a Gmail App Password, NOT your normal Gmail password.
 
 ## ▶️ Running the Project Locally
+
 ### 1️⃣ Backend
 
 ```
@@ -120,31 +122,36 @@ cd backend
 npm install
 npm run dev
 ```
-*You should see:*
+
+_You should see:_
 
 ```
 Server is running on port 5000
 ✅ SMTP READY (Gmail app password working)
 ```
+
 ### 2️⃣ Frontend
+
 ```
 cd frontend
 npm install
 npm run dev
 ```
 
-*Frontend will be available at:*
+_Frontend will be available at:_
+
 ```
 http://localhost:5173
 ```
 
 ---
 
-
 # 🔗 API Endpoint
+
 ## POST /api/contact
 
-*Request body:*
+_Request body:_
+
 ```
 {
   "name": "John Doe",
@@ -153,7 +160,9 @@ http://localhost:5173
   "message": "Hello!"
 }
 ```
-*Success response:*
+
+_Success response:_
+
 ```
 {
   "success": true,
@@ -182,7 +191,9 @@ http://localhost:5173
 ### 🧑‍💻 Author
 
 #### Blaise
+
 #### Full-Stack Developer
+
 #### React • Node.js • Laravel • Backend Systems
 
 ---
