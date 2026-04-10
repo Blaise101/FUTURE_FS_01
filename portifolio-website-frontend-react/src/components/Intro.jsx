@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import MyImage from "/images/blaise.jpg";
+import { ChevronRight } from "lucide-react";
 
 export default function Intro() {
   const navigate = useNavigate();
@@ -26,10 +27,14 @@ export default function Intro() {
               simple, elegant code.
             </p>
             <button
-              className="lime-glow lime-glow-hover inline-block transform rounded-lg bg-lime-500 px-8 py-3 text-lg font-bold text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-lime-400"
+              className="lime-glow lime-glow-hover inline-flex transform rounded-lg bg-lime-500 px-8 py-3 text-lg font-bold text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-lime-400"
               onClick={() => navigate("/cv")}
             >
-              My Resume &rsaquo;
+              <span>My Resume</span>
+              <ChevronRight
+                size={16}
+                className="m-auto ms-2"
+              />
             </button>
           </div>
         </div>

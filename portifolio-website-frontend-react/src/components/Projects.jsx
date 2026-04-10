@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import { ProjectImages } from "../assets/defaults";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { projects } from "../assets/defaults";
 
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const length = projects.length;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % ProjectImages.length);
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % length);
+    }, 20000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [length]);
 
   const goToSlide = (index) => {
-    setCurrentIndex((index + ProjectImages.length) % ProjectImages.length);
+    setCurrentIndex((index + length) % length);
   };
 
   return (
@@ -21,46 +23,111 @@ export default function Projects() {
       className="py-24"
       id="projects"
     >
+      {/* Header */}
       <div className="mb-12 text-center">
         <h2 className="text-4xl font-bold md:text-5xl">
-          Recent <span className="text-glow text-lime-400">Projects!</span>
+          Recent <span className="text-lime-400">Projects</span>
         </h2>
+        <p className="mt-4 text-gray-400">
+          Hover to explore each project in detail
+        </p>
       </div>
-      <div className="carousel-container relative mx-auto max-w-4xl">
-        <div className="overflow-hidden rounded-lg shadow-2xl shadow-lime-900/30">
+
+      {/* Carousel */}
+      <div className="relative mx-auto max-w-6xl">
+        <div className="overflow-hidden rounded-2xl shadow-2xl shadow-lime-900/30">
           <div
-            className="flex transition-transform duration-700 ease-in-ou"
+            className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {ProjectImages.map((image, index) => (
-              <img
+            {projects.map((project, index) => (
+              <div
                 key={index}
-                alt={image.alt}
-                className="h-auto w-full flex-shrink-0"
-                src={image.src}
-              />
+                className="w-full flex-shrink-0"
+              >
+                {/* CARD */}
+                <div className="relative group w-full h-[500px] md:h-[600px] overflow-hidden">
+                  {/* IMAGE */}
+                  <img
+                    src={project.src}
+                    alt={project.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* DARK OVERLAY */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* CONTENT OVERLAY */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <h3 className="text-3xl font-bold text-lime-400">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-3 text-gray-200 max-w-2xl">
+                      {project.description}
+                    </p>
+
+                    {/* Tech */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tech.map((t, i) => (
+                        <span
+                          key={i}
+                          className="text-xs bg-lime-500/20 text-lime-300 px-3 py-1 rounded-full"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Links */}
+                    <div className="mt-6 flex gap-4">
+                      <a
+                        href={project.live}
+                        target={project.live !== "#projects" && "blank"}
+                        className="px-5 py-2 bg-lime-500 text-black font-semibold rounded-lg hover:bg-lime-400 transition"
+                      >
+                        Live Demo
+                      </a>
+
+                      <a
+                        href={project.github}
+                        target="blank"
+                        className="px-5 py-2 border border-lime-400 text-lime-400 rounded-lg hover:bg-lime-500/10 transition"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
+
+        {/* Navigation */}
         <button
-          aria-label="Previous project"
           onClick={() => goToSlide(currentIndex - 1)}
-          className="lime-glow-hover absolute left-0 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-lime-500/80 text-gray-900 transition-all duration-300 hover:bg-lime-500 font-extrabold"
+          className="absolute left-3 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-lime-500 text-black font-bold hover:bg-lime-400 transition"
         >
-          &lsaquo;
+          <ChevronLeft
+            className="m-auto"
+            size={14}
+          />
         </button>
+
         <button
           onClick={() => goToSlide(currentIndex + 1)}
-          aria-label="Next project"
-          className="lime-glow-hover absolute right-0 top-1/2 flex h-12 w-12 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-lime-500/80 text-gray-900 transition-all duration-300 hover:bg-lime-500 font-extrabold"
+          className="absolute right-3 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-lime-500 text-black font-bold hover:bg-lime-400 transition"
         >
-          &rsaquo;
+          <ChevronRight
+            className="m-auto"
+            size={14}
+          />
         </button>
-        <div
-          className="absolute -bottom-10 left-1/2 flex -translate-x-1/2 gap-2"
-          id="carousel-dots"
-        >
-          {ProjectImages.map((_, index) => (
+
+        {/* Dots */}
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
+          {projects.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
