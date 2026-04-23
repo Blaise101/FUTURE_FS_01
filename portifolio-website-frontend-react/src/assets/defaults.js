@@ -33,7 +33,7 @@ export const projects = [
     src: lunaThread,
     tech: ["React", "Laravel", "MySql", "Tailwind CSS"],
     alt: "Luna Thread Dashboard",
-    live: "https://future-fs-03-30g875kcq-blaise-izerimanas-projects.vercel.app/",
+    live: "https://future-fs-03-lake-phi.vercel.app/",
     github: "https://github.com/Blaise101/FUTURE_FS_03/",
   },
   {
