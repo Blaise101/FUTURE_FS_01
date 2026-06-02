@@ -5,10 +5,20 @@ import byuzuyeImage from "/projects/byuzuye/image.png";
 import lunaThread from "/projects/future-interns/dashboard.png";
 import lostButFound from "/projects/lostbutfound/lostbutfound.png"
 import cats from "/projects/CATS/login.png"
+import aim from "/projects/AIM/aim.png"
 // import miniCRM from "/projects/future-interns/crm.png"
 
 
 export const projects = [
+  {
+    title: "Africa Innovation Market",
+    description: "Real estate listing and management platform that allows users to browse, search, and manage properties for sale or rent. It provides a user-friendly interface for property owners, agents, and potential buyers/renters to interact and facilitate real estate transactions.",
+    src: aim,
+    tech: ["React", "Laravel", "Postgresql", "Tailwind CSS", "React Motion"],
+    alt: "AIM Home Page",
+    live: "https://africainnovationmarket.com/",
+    github: "https://github.com/Blaise101/Africa-Innovation-Market-Frontend",
+  },
   {
     title: "CATS (Computer Assets Tracking System)",
     description: "The system is intended to replace manual, paper-based and Excel-based tracking of computers with a centralized, digital, and QR-code-based asset management solution.",
