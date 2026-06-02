@@ -12,7 +12,7 @@ import aim from "/projects/AIM/aim.png"
 export const projects = [
   {
     title: "Africa Innovation Market",
-    description: "Real estate listing and management platform that allows users to browse, search, and manage properties for sale or rent. It provides a user-friendly interface for property owners, agents, and potential buyers/renters to interact and facilitate real estate transactions.",
+    description: "Real estate listing and management platform that allows users to browse, search, and manage properties for sale or rent.",
     src: aim,
     tech: ["React", "Laravel", "Postgresql", "Tailwind CSS", "React Motion"],
     alt: "AIM Home Page",
