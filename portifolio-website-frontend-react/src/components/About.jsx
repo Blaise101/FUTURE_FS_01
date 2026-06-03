@@ -14,12 +14,12 @@ export default function About() {
       </div>
       <div className="mx-auto max-w-4xl space-y-6 text-center text-lg text-gray-300">
         <p>
-          Hi there, I am
+          Hi there, I am{" "}
           <span className="font-bold text-white">Blaise IZERIMANA</span> a
-          computer sciences student at Ashesi University and former
+          computer sciences student at Ashesi University and former{" "}
           <span className="font-bold text-white">
             Ireme Technologies Intern
-          </span>
+          </span>{" "}
           in software development with proficient skills in various programming
           languages that I use to develop solid frontend designs and I build
           desktop applications with back-end technologies.
