@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import CV from "./assets/Blaise_Izerimana_Cover_Letter.pdf";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   useEffect(() => {
@@ -64,6 +65,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Analytics />
     </>
   );
 }
