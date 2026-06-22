@@ -16,7 +16,7 @@ export const projects = [
     src: aim,
     tech: ["React", "Laravel", "Postgresql", "Tailwind CSS", "React Motion"],
     alt: "AIM Home Page",
-    live: "https://africainnovationmarket.com/",
+    live: "https://kigaliinnovationmarket.com/",
     github: "https://github.com/Blaise101/Africa-Innovation-Market-Frontend",
   },
   {
