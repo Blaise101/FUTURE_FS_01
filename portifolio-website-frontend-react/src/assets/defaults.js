@@ -8,7 +8,6 @@ import cats from "/projects/CATS/login.png"
 import aim from "/projects/AIM/aim.png"
 // import miniCRM from "/projects/future-interns/crm.png"
 
-
 export const projects = [
   {
     title: "Africa Innovation Market",
@@ -25,7 +24,7 @@ export const projects = [
     src: cats,
     tech: ["React", "Laravel", "Postgresql", "Tailwind CSS"],
     alt: "Luna Thread Dashboard",
-    live: "#projects",
+    live: "https://samplecats.vercel.app/#/login",
     github: "https://github.com/Blaise101/UPDATED-NESA-CATS-FRONTEND",
   },
   {
@@ -34,7 +33,7 @@ export const projects = [
     src: lostButFound,
     tech: ["Laravel", "MySql", "Tailwind CSS"],
     alt: "Luna Thread Dashboard",
-    live: "#projects",
+    live: "https://samplelostbutfound.vercel.app/",
     github: "https://github.com/Blaise101/Lost-But-Found",
   },
   {
